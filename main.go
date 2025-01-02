@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"strconv"
 
@@ -48,11 +49,19 @@ func main() {
 		case "addition":
 			z = x + y
 		case "substraction":
-			z = x - y
+			// z = x - y
+			if x > y {
+				z = x - y
+			} else {
+				z = y - x
+			}
+
 		case "multiplication":
 			z = x * y
 		case "division":
-			z = x / y
+			if y == 0 {
+				fmt.Println("y must be non zero")
+			}
 
 		}
 
