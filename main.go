@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"strconv"
 
@@ -60,9 +59,9 @@ func main() {
 			z = x * y
 		case "division":
 			if y == 0 {
-				fmt.Println("y must be non zero")
+				return c.SendString("y should be non zero")
 			}
-
+			z = x / y
 		}
 
 		return c.JSON(fiber.Map{
